@@ -1,6 +1,7 @@
 package com.devsuperior.movieflix.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 @Entity
@@ -11,6 +12,7 @@ public class Review implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message = "Campo obrigatório. Escreva a sua avaliação.")
     private String text;
 
     @ManyToOne
@@ -61,4 +63,6 @@ public class Review implements Serializable {
     public void setUser(User user) {
         this.user = user;
     }
+
+
 }
