@@ -8,7 +8,9 @@ import com.devsuperior.movieflix.entities.User;
 import com.devsuperior.movieflix.repositories.MovieRepository;
 import com.devsuperior.movieflix.repositories.ReviewRepository;
 import com.devsuperior.movieflix.repositories.UserRepository;
+import com.devsuperior.movieflix.services.exceptions.ForbiddenException;
 import com.devsuperior.movieflix.services.exceptions.ResourceNotFoundException;
+import com.devsuperior.movieflix.services.exceptions.UnauthorizedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -35,7 +37,7 @@ public class ReviewService {
     @Transactional
     public ReviewDTO saveReview(ReviewDTO reviewDTO){
 
-
+    try{
         Review newReview = new Review();
         User user = authService.authenticated();
         newReview.setId(reviewDTO.getId());
@@ -43,7 +45,12 @@ public class ReviewService {
         newReview.setMovie(movieRepository.getOne(reviewDTO.getMovieId()));
         newReview.setUser(user);
         reviewRepository.save(newReview);
-
         return new ReviewDTO(newReview);
+    } catch (RuntimeException e){
+        throw new UnauthorizedException("Usuário não autorizado");
+    }
+
+
+
     }
 }
