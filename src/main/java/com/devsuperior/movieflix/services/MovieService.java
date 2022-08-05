@@ -48,7 +48,7 @@ public class MovieService {
     @PreAuthorize("hasAnyRole('MEMBER','VISITOR')")
     public MovieDTO findById(Long id){
         Optional<Movie> productObj = movieRepository.findById(id);
-        Movie movie = productObj.orElseThrow(()-> new ResourceNotFoundException("Entidade não encontrada"));
+        Movie movie = productObj.orElseThrow(()-> new ResponseStatusException(NOT_FOUND));
         return new MovieDTO(movie);
     }
 

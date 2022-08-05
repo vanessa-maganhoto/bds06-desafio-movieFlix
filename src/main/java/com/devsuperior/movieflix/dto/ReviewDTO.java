@@ -11,7 +11,7 @@ public class ReviewDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
-    @NotBlank(message = "          ")
+    @NotBlank(message = "Preencha o campo para enviar a sua avaliação")
     private String text;
     private UserDTO user;
     private Long movieId;
