@@ -1,5 +1,5 @@
 # Desafio MovieFlix
-Desafio realizado como requisito obrigatório do Bootcamp Spring React da [DevSuperior](https://devsuperior.com.br)
+Desafio realizado como requisito obrigatório do Bootcamp Spring React da [DevSuperior](https://devsuperior.com.br). Desenvolvimento do back-end utilizando a metodologia do TDD com os testes escritos utilizando o JUnit5.
 
 ## Sobre o projeto
 O sistema MovieFlix consiste em um banco de filmes, os quais podem ser listados e avaliados pelos usuários. Usuários podem ser visitantes (VISITOR) e membros (MEMBER). Apenas usuários membros podem inserir avaliações no sistema.
@@ -29,6 +29,7 @@ Um usuário possui nome, email e senha, sendo que o email é seu nome de usuári
 ### Back end
 - Java
 - Spring Boot
+- JUnit5
 - JPA / Hibernate
 - Maven
 ### Front end
