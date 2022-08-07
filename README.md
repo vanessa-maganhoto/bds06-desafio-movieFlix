@@ -48,7 +48,7 @@ Pré-requisitos: Java 11
 
 ```bash
 # clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
+git clone git@github.com:vanessa-maganhoto/bds06-desafio-movieFlix.git
 
 # entrar na pasta do projeto back end
 cd backend
@@ -57,15 +57,15 @@ cd backend
 ./mvnw spring-boot:run
 ```
 
-### Front end web
+### Front end 
 Pré-requisitos: npm / yarn
 
 ```bash
 # clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
+git clone git@github.com:vanessa-maganhoto/bds06-desafio-movieFlix.git
 
 # entrar na pasta do projeto front end web
-cd front-web
+cd frontend
 
 # instalar dependências
 yarn install
