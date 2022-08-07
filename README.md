@@ -1,7 +1,7 @@
 # Desafio MovieFlix
+Desafio realizado como requisito obrigatório do Bootcamp Spring React da [DevSuperior](https://devsuperior.com.br)
 
-
-# Sobre o projeto
+## Sobre o projeto
 O sistema MovieFlix consiste em um banco de filmes, os quais podem ser listados e avaliados pelos usuários. Usuários podem ser visitantes (VISITOR) e membros (MEMBER). Apenas usuários membros podem inserir avaliações no sistema.
 
 Ao acessar o sistema, o usuário deve fazer seu login. Apenas usuários logados podem navegar nos filmes. Logo após fazer o login, o usuário vai para a listagem de filmes, que mostra os filmes de forma paginada, ordenados alfabeticamente por título. O usuário pode filtrar os filmes por gênero.
@@ -10,39 +10,39 @@ Ao selecionar um filme da listagem, é mostrada uma página de detalhes, onde é
 
 Um usuário possui nome, email e senha, sendo que o email é seu nome de usuário. Cada filme possui um título, subtítulo, uma imagem, ano de lançamento, sinopse, e um gênero. Os usuários membros podem registrar avaliações para os filmes. Um mesmo usuário membro pode deixar mais de uma avaliação para o mesmo filme.
 
-## Layout mobile
+### Layout mobile
 ![Mobile 1](https://github.com/vanessa-maganhoto/assets/blob/main/cap5-bds-movieflix/versa-mobile-1.png)
 ![Mobile 2](https://github.com/vanessa-maganhoto/assets/blob/main/cap5-bds-movieflix/versa-mobile-2.png)
 ![Mobile 3](https://github.com/vanessa-maganhoto/assets/blob/main/cap5-bds-movieflix/versa-mobile-3.png)
 
-## Layout web
+### Layout web
 ![Web 1](https://github.com/vanessa-maganhoto/assets/blob/main/cap5-bds-movieflix/versao-desktop-1.png)
 
 ![Web 2](https://github.com/vanessa-maganhoto/assets/blob/main/cap5-bds-movieflix/versao-desktop-2.png)
 
 ![Web 2](https://github.com/vanessa-maganhoto/assets/blob/main/cap5-bds-movieflix/versao-desktop-3.png)
 
-## Modelo conceitual
+### Modelo conceitual
 ![Modelo Conceitual](https://github.com/vanessa-maganhoto/assets/blob/main/cap5-bds-movieflix/modelo-conceitual.png)
 
-# Tecnologias utilizadas
-## Back end
+## Tecnologias utilizadas
+### Back end
 - Java
 - Spring Boot
 - JPA / Hibernate
 - Maven
-## Front end
+### Front end
 - HTML / CSS / JS / TypeScript
 - ReactJS
 
-## Implantação em produção
+### Implantação em produção
 - Back end: Heroku
 - Front end web: Netlify
 - Banco de dados: Postgresql
 
-# Como executar o projeto
+## Como executar o projeto
 
-## Back end
+### Back end
 Pré-requisitos: Java 11
 
 ```bash
@@ -56,7 +56,7 @@ cd backend
 ./mvnw spring-boot:run
 ```
 
-## Front end web
+### Front end web
 Pré-requisitos: npm / yarn
 
 ```bash
@@ -73,7 +73,7 @@ yarn install
 yarn start
 ```
 
-# Autor
+## Autor
 
 Vanessa Matos
 
