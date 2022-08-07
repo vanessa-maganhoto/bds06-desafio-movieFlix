@@ -78,5 +78,5 @@ yarn start
 
 Vanessa Matos
 
-https://github.com/vanessa-maganhoto
+https://www.linkedin.com/in/vanessaammatos
 
