@@ -1,0 +1,9 @@
+.main-nav{
+    padding-left: 49px;
+    height: 70px;
+}
+
+.nav-logo-text, .nav-logo-text:hover{
+    color: #000000;
+    font-size: 24px;
+}
