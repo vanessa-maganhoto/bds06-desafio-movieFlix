@@ -1,9 +1,28 @@
-.main-nav{
-    padding-left: 49px;
+.main-nav {
+    padding-left: 18px;
     height: 70px;
 }
 
-.nav-logo-text, .nav-logo-text:hover{
+.nav-logo-text,
+.nav-logo-text:hover {
     color: #000000;
     font-size: 24px;
+}
+
+@media(min-width: 576px) {
+    .main-nav {
+        padding-left: 23px;
+    }
+}
+
+@media(min-width: 768px) {
+    .main-nav {
+        padding-left: 31px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .main-nav {
+        padding-left: 50px;
+    }
 }
