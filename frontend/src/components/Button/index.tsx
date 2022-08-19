@@ -1,8 +1,12 @@
 import './styles.css';
 
-const Button = () => {
+
+type Props = {
+    text: string;
+}
+const Button = ({ text } : Props) => {
     return (
-        <button type="submit">fazer login</button>
+        <button type="submit">{text}</button>
     )
 }
 

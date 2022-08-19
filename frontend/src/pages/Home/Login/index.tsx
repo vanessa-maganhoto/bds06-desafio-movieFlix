@@ -9,7 +9,7 @@ const Login = () => {
         <input type="text" placeholder="Email" />
         <input type="password" placeholder="Senha" />
       </form>
-      <Button />
+      <Button text="fazer login"/>
     </div>
   );
 };
