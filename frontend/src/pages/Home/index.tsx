@@ -1,6 +1,6 @@
 import Navbar from 'components/Navbar';
 import { ReactComponent as BannerHome } from 'assets/images/banner-home.svg';
-import Button from 'components/Button';
+import Login from './Login';
 import './styles.css';
 
 const Home = () => {
@@ -18,15 +18,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="home-login">
-            <h1>login</h1>
-            <form>
-                <input type='text' placeholder='Email'/>
-                <input type="password"
-                placeholder="Senha"/>
-            </form>
-            <Button />
-        </div>
+        <Login />
       </div>
     </>
   );
