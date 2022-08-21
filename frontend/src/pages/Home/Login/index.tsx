@@ -1,7 +1,7 @@
 import Button from 'components/Button';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { requestBackendLogin } from 'util/requests';
+import { getAuthData, requestBackendLogin, saveAuthData } from 'util/requests';
 import './styles.css';
 
 type FormData = {
@@ -16,6 +16,9 @@ const Login = () => {
   const onSubmit = (formData: FormData) => {
     requestBackendLogin(formData)
       .then((response) => {
+        saveAuthData(response.data);
+        const token = getAuthData().access_token;
+        console.log(token);
         setHasError(false);
         console.log('SUCESSO', response);
       })
@@ -34,7 +37,11 @@ const Login = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register('username', {
-            required: 'Campo obrigatório'
+            required: 'Campo obrigatório',
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: 'Preencha com email válido'
+            }
           })}
           type="text"
           placeholder="Email"
