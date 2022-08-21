@@ -7,7 +7,7 @@ type Props ={
 const MovieCard = ({ movie } : Props) => {
     return(
         <div>
-            <h2>{movie?.title}</h2>
+            <h2>{movie.title}</h2>
             <img src={movie.imgUrl} alt ={movie.title}/>
         </div>
     );
