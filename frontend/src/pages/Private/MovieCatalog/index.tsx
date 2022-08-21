@@ -2,11 +2,11 @@
 import { useState, useEffect } from 'react';
 
 import Title from 'components/Title';
-import axios, { AxiosRequestConfig } from 'axios';
-import { BASE_URL, requestBackend } from 'util/requests';
+import { AxiosRequestConfig } from 'axios';
+import { requestBackend } from 'util/requests';
 import { Movie } from 'types/movie';
 import { Link } from 'react-router-dom';
-import MovieDetails from '../MovieDetails';
+
 
 
 const MovieCatalog = () => {

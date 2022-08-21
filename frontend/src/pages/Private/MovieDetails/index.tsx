@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from "axios";
+import { AxiosRequestConfig } from "axios";
 import Title from "components/Title";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
