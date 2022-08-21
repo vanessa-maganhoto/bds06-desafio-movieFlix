@@ -1,21 +1,18 @@
-import { Link } from 'react-router-dom';
+
 import { useState, useEffect } from 'react';
-import { Review } from 'types/review';
-import MovieDetails from '../MovieDetails';
+
 import Title from 'components/Title';
 import axios from 'axios';
 import { BASE_URL } from 'util/requests';
+import { Movie } from 'types/movie';
 
-// type Props = {
-//     review: Review
-// };
 
 const MovieCatalog = () => {
-  const [review, setReview] = useState<Review>();
+  const [movie, setMovie] = useState<Movie>();
 
   useEffect(() => {
     axios.get(BASE_URL + '/movies/1').then((response) => {
-      setReview(response.data);
+      setMovie(response.data);
     });
   }, []);
 
@@ -23,9 +20,7 @@ const MovieCatalog = () => {
     <>
       <Title text="Tela de listagem de filmes" />
       <div>
-        {/* <Link to={`/movies/${review?.movieId}`}>
-          <MovieCard movie={movie} />
-        </Link> */}
+        <h2>{movie?.title}</h2>
       </div>
     </>
   );
