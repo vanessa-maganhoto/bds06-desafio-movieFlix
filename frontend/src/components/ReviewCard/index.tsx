@@ -21,7 +21,7 @@ const ReviewCard = ({ review }: Props) => {
           </div>
         </div>
       ))}
-      ;
+      
     </div>
   );
 };
