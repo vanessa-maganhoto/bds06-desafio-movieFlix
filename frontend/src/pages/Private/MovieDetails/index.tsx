@@ -1,4 +1,5 @@
 import { AxiosRequestConfig } from "axios";
+import ReviewWrite from "components/ReviewWrite";
 import Title from "components/Title";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -43,6 +44,7 @@ const MovieDetails = () =>{
 
         <div>
             <Title text={`Tela de detalhes do filme id: ${movieId}`} />
+            <ReviewWrite />
             {/* Componente para inserir a avaliação */}
             <h1>{movie?.title}</h1>
             {/* <h2>{review?.user.name}</h2>
