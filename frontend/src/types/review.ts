@@ -6,3 +6,4 @@ export type Review = {
     user: User;
     movieId: number;
 }
+
