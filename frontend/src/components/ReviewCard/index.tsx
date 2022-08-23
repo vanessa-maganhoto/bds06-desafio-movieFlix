@@ -9,9 +9,9 @@ type Props = {
 
 const ReviewCard = ({ review }: Props) => {
   return (
-    <div className="container-review">
+    <div className="review-container">
       {review.map((reviewItem) => (
-        <div key={reviewItem.id}>
+        <div key={reviewItem.id} className="review-div">
           <div className="review-username">
             <Star />
             <h4>{reviewItem.user.name}</h4>
