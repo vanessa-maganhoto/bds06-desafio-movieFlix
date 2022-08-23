@@ -32,7 +32,7 @@ const MovieCatalog = () => {
 
     
     <>
-      <Title text="Tela de listagem de filmes" />
+      <Title text="Tela listagem de filmes" />
       <div>
         <ul>
           <li><Link to="/movies/1">Acessar /movies/1</Link></li>
