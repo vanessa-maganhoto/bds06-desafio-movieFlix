@@ -58,7 +58,9 @@ const ReviewForm = ({ movieId, onInsertReview }: Props) => {
         />
         {errors.text?.message}
 
-        <Button text="salvar avaliação" />
+        <div className="review-button">
+          <Button text="salvar avaliação" />
+        </div>
       </form>
     </div>
   );

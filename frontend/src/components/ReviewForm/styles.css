@@ -24,8 +24,7 @@
         align-items: center;
     }
 
-    Button{
-        width: 334px;
-        
+    .review-button{
+        width: 334px;  
     }
 }
