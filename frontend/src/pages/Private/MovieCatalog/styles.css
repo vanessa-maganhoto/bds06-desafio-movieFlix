@@ -1,0 +1,24 @@
+.catalog-container {
+    margin-left: 18px;
+    margin-top: 49px;
+}
+
+.catalog-list-item {
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: -0.015em;
+}
+
+@media(min-width:1024px){
+    .catalog-container {
+        margin-left: 40px;
+    }
+
+    .catalog-list-item {
+        font-size: 24px;
+        letter-spacing: -0.015em;
+        margin-bottom: 27px;
+    }
+
+}
