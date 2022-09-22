@@ -1,15 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { AxiosRequestConfig } from 'axios';
 import { BASE_URL, requestBackend } from 'util/requests';
 import { Movie } from 'types/movie';
 import { Link } from 'react-router-dom';
 import { SpringPage } from 'types/vendor/spring';
 import MovieCard from 'components/MovieCard';
+import GenreFilter, { GenreFilterData } from 'components/GenreFilter';
+import Pagination from 'components/Pagination';
 
 import './styles.css';
-import GenreFilter, { GenreFilterData } from 'components/GenreFilter';
-import { Genre } from 'types/genre';
-
 
 type ControlComponentsData = {
   activePage: number;
@@ -27,21 +26,33 @@ const MovieCatalog = () => {
     }
   );
 
-  useEffect(() => {
+  
+  const handlePageChange = (pageNumber: number) =>{
+    setControlComponentsData({activePage: pageNumber, filterData: controlComponentsData.filterData});
+  }
+
+  const getMovies = useCallback(() => {
     const config: AxiosRequestConfig = {
       method: 'GET',
       url: '/movies',
       withCredentials: true,
       baseURL: BASE_URL,
       params: {
-        page: 0,
+        page: controlComponentsData.activePage,
         size: 4,
+        name: controlComponentsData.filterData.name,
+        genreId: controlComponentsData.filterData.name?.id
       },
     };
+
     requestBackend(config).then((response) => {
       setPage(response.data);
     });
-  }, []);
+  } , [controlComponentsData]);
+
+  useEffect(() => {
+    getMovies();
+  }, [getMovies]);
 
   const handleSubmitFilter = (data: GenreFilterData) => {
     setControlComponentsData({activePage: 0, filterData: data});
@@ -62,6 +73,12 @@ const MovieCatalog = () => {
             </div>
           ))}
         </div>
+        <Pagination 
+        forcePage={page?.number}
+        pageCount={(page) ? page.totalPages : 0 } 
+        range={3}
+        onChange={handlePageChange}
+      />
       </div>
     </>
   );
