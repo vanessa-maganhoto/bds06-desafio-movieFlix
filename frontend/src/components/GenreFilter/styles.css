@@ -1,0 +1,14 @@
+.genre-filter-form-select {
+    display: flex;
+    align-items: center;
+    
+}
+
+.genre-filter-select {
+    border: 1px solid #E1E1E1;
+    border-radius: 4px;
+}
+
+.genre-filter-select:focus {
+    box-shadow: none;
+}
