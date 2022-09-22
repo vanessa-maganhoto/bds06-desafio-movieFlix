@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useHistory, useLocation } from 'react-router-dom';
 import { getTokenData } from 'util/auth';
 import { getAuthData, requestBackendLogin, saveAuthData } from 'util/requests';
+import { toast } from 'react-toastify';
 import './styles.css';
 
 type FormData = {
@@ -38,6 +39,7 @@ const Login = () => {
         console.log(token);
         setHasError(false);
         console.log('SUCESSO', response);
+        toast.success('Login efetuado com sucesso!');
         setAuthContextData({
           authenticated: true,
           tokenData: getTokenData(),})
@@ -46,6 +48,7 @@ const Login = () => {
       .catch((error) => {
         setHasError(true);
         console.log('ERRO', error);
+        toast.error('Erro ao efetuar o login');
       });
   };
 
