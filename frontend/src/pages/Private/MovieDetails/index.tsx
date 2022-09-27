@@ -53,14 +53,21 @@ const MovieDetails = () => {
   };
 
   return (
-    <div>
+    <div className="movie-details-container">
       {
-        <div>
-          <img src={movies?.imgUrl} alt={movies?.title} />
-          <h2>{movies?.title}</h2>
-          <h3>{movies?.year}</h3>
-          <p>{movies?.subTitle}</p>
-          <p>{movies?.synopsis}</p>
+        <div className="movie-details-card">
+          <div className="movie-details-img">
+            <img src={movies?.imgUrl} alt={movies?.title} />
+          </div>
+
+          <div className="movie-details-info">
+            <h2>{movies?.title}</h2>
+            <h3>{movies?.year}</h3>
+            <p>{movies?.subTitle}</p>
+            <div className="movie-details-info-p">
+              <p>{movies?.synopsis}</p>
+            </div>
+          </div>
         </div>
       }
       {hasAnyRole(['ROLE_MEMBER']) && (
