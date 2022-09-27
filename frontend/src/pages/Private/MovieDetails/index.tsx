@@ -30,9 +30,8 @@ const MovieDetails = () => {
 
     requestBackend(getReviews).then((response) => {
       setReviews(response.data);
-      console.log(response.data);
     });
-  }, [movieId]);
+  }, [movieId, reviews.length]);
 
   useEffect(() => {
     const getMovies: AxiosRequestConfig = {
@@ -40,10 +39,10 @@ const MovieDetails = () => {
       url: `/movies/${movieId}/`,
       withCredentials: true,
       baseURL: BASE_URL,
-    }
+    };
     requestBackend(getMovies).then((response) => {
       setMovies(response.data);
-      console.log("movies",response.data)
+      console.log('movies', response.data);
     });
   }, [movieId]);
 
@@ -55,19 +54,19 @@ const MovieDetails = () => {
 
   return (
     <div>
-      
       {
         <div>
           <img src={movies?.imgUrl} alt={movies?.title} />
           <h2>{movies?.title}</h2>
           <h3>{movies?.year}</h3>
           <p>{movies?.subTitle}</p>
+          <p>{movies?.synopsis}</p>
         </div>
       }
       {hasAnyRole(['ROLE_MEMBER']) && (
         <ReviewForm movieId={movieId} onInsertReview={handleInsertReview} />
       )}
-      <ReviewCard review={reviews} />
+      {reviews.length === 0 ? ' ' : <ReviewCard review={reviews} />}
     </div>
   );
 };
